@@ -5,3 +5,9 @@ export enum ThemeOptions {
 }
 
 export type themeTypesCustome = ThemeOptions;
+
+// app controls
+export type AppControls = {
+  sidebarActiveState: boolean;
+  fullScreenRef: boolean;
+};

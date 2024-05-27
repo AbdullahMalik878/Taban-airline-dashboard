@@ -37,7 +37,7 @@
     --radius: 0.5rem;
   }
 
-  .dark {
+  .dark { 
     --background: 224 71.4% 4.1%;
     --foreground: 210 20% 98%;
 
@@ -73,4 +73,59 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+@layer components {
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .textElipese {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .scrollbarwork,
+  .transparent_scrollbarwork {
+    overflow: scroll;
+  }
+
+  .scrollbarwork::-webkit-scrollbar {
+    width: 8px;
+    height: 0px;
+  }
+
+  .scrollbarwork::-webkit-scrollbar-thumb {
+    background-color: #252d2e !important;
+    width: 8px;
+    border-radius: 10px;
+  }
+
+  .scrollbarwork::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+  .transparent_scrollbarwork {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  /* animations */
+  /* @keyframes littleCarIcon {
+    0% {
+      top: -16px;
+      left: 10px;
+    }
+
+    50% {
+      top: -16px;
+      left: 100px;
+    }
+
+    100% {
+      top: -16px;
+      left: 10px;
+    }
+  } */
 }
