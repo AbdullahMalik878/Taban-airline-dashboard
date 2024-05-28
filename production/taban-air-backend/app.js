@@ -8,6 +8,8 @@ const { EnvConfig } = require("./conf/env-conf")
 const errorHandlerMiddleware = require("./middlewares/catchErrors")
 const middlewares = require("./middlewares/customHeaders")
 const ErrorHandler = require("./utils/ErroHandler")
+const getSystemInfo = require("./services/SystemInfo")
+const sharedApis = require("./routes/shared_route")
 
 // DB Connection
 const connectionToDatabase = require("./conf/db-conf")
@@ -56,7 +58,7 @@ const main = async () => {
       })
     })
     // api's routes
-    // app.use("^/api/v1")
+    app.use("^/api", sharedApis)
     // NOT FOR PRODUCTION 💥💥💥
     app.use("^/error/logs$", async (req, res, next) => {
       const { file } = req.query
